@@ -1,0 +1,40 @@
+﻿<Window x:Class="LinesAsDrawingBrush.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" >
+    <Grid Height="800" Width="800">
+        <Grid.Background>
+            <DrawingBrush Viewport="0,0,1,1" TileMode="Tile" x:Name="DrawingBrush">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="Black" Thickness="1"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <GeometryGroup>
+                                    <LineGeometry StartPoint="0, 100"
+                                                      EndPoint="100, 100"/>
+                                    <LineGeometry StartPoint="100, 0" 
+                                                      EndPoint="100, 100"/>
+                                </GeometryGroup>
+                            </GeometryDrawing.Geometry>
+
+                        </GeometryDrawing>
+                        
+                        
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </Grid.Background>
+
+        <StackPanel>
+            <Label>Width</Label>
+            <TextBox x:Name="WidthBox" TextChanged="WidthBox_OnTextChanged"/>
+            <Label>Height</Label>
+            <TextBox x:Name="HeightBox" TextChanged="HeightBox_OnTextChanged"/>
+        </StackPanel>
+        <Canvas x:Name="Canvas" ></Canvas>
+    </Grid>
+</Window>
